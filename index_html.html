@@ -4667,6 +4667,191 @@
     .nav-dropdown-item:hover > .nav-sub-dropdown { transform: translateX(0); }
   }
 
+  /* ══════════════════════════════════════════════════════════════
+     TABLET / iPAD RESPONSIVE — 768px–1024px
+     Tối ưu layout cho iPad mini, iPad, iPad Air/Pro 11"
+     ══════════════════════════════════════════════════════════════ */
+  @media (max-width: 1024px) {
+
+    /* ── NAV ── */
+    nav {
+      padding: 0 24px;
+      gap: 0;
+    }
+    .nav-logo-wrap {
+      margin-right: 24px;
+    }
+    .nav-links > li > a {
+      padding: 0 12px;
+      font-size: 11px;
+    }
+    .nav-logo-name {
+      font-size: 22px;
+    }
+
+    /* ── HERO ── */
+    .hero-v2 {
+      min-height: 520px;
+    }
+    .hero-v2-left {
+      padding: 60px 32px 48px;
+    }
+    .hero-v2-title {
+      font-size: clamp(28px, 4vw, 44px);
+    }
+
+    /* ── HOME PRODUCT LINES ── */
+    .home-section-wrap {
+      padding: 56px 32px 48px;
+    }
+    .home-product-lines {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    /* ── STATS ── */
+    .home-stats {
+      padding: 32px 32px;
+    }
+
+    /* ── PRODUCTS GRID — 3 cột thay vì 4 ── */
+    .products-grid {
+      grid-template-columns: repeat(3, 1fr) !important;
+    }
+    .products-hero {
+      padding: 32px 32px 24px;
+    }
+
+    /* ── PRODUCT DETAIL MODAL ── */
+    .modal-inner {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    /* ── CUSTOMIZE ── */
+    .customize-layout {
+      grid-template-columns: 1fr 1fr;
+    }
+    .customize-preview {
+      padding: 40px 24px;
+    }
+    .customize-form {
+      padding: 40px 28px;
+    }
+
+    /* ── MIX COMBO ── */
+    .mix-layout {
+      grid-template-columns: 1fr 320px;
+    }
+    .mix-main {
+      padding: 40px 28px;
+    }
+    .mix-products {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* ── COMBO GRID — 2 cột ── */
+    .combo-grid {
+      grid-template-columns: 1fr 1fr;
+      padding: 0 32px 56px;
+    }
+
+    /* ── WORKSHOP ── */
+    .workshop-hero-content {
+      padding: 56px 40px 48px;
+    }
+    .ws-info-layout,
+    .ws-detail-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+    .ws-register-layout {
+      padding: 32px 32px;
+    }
+    .ws-form-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    /* ── ARTICLES GRID — 2 cột ── */
+    .articles-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    /* ── REVIEWS ── */
+    .reviews-grid {
+      padding: 24px 32px;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    /* ── CHECKOUT ── */
+    .ck-body {
+      padding: 28px 32px 56px;
+    }
+    .ck-panel.active {
+      gap: 24px;
+    }
+    .ck-form-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    /* ── CART PAGE ── */
+    .cart-page-body {
+      padding: 24px 32px 56px;
+      grid-template-columns: 1fr 340px;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 56px 32px 28px;
+    }
+    .footer-grid,
+    .footer-inner {
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 32px;
+    }
+    .footer-img-col {
+      display: none;
+    }
+
+    /* ── NEWSLETTER ── */
+    .home-newsletter {
+      padding: 40px 32px;
+    }
+
+    /* ── ABOUT / VỀ THƠM ── */
+    .vt-body {
+      padding: 40px 32px 56px;
+      grid-template-columns: 1fr 1fr;
+    }
+    .vt-values-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+    .vt-contact-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    /* ── POLICY ── */
+    .policy-content {
+      padding: 32px 32px;
+    }
+
+    /* ── SECTION HEADERS ── */
+    .section-header {
+      padding: 56px 32px 36px;
+    }
+
+    /* ── PRODUCT LINES PAGE ── */
+    .product-lines-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    /* ── PROD REVIEWS ── */
+    .prod-reviews-section {
+      padding: 48px 32px;
+    }
+    .prod-reviews-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+  } /* END @media (max-width: 1024px) */
+
   /* ── MOBILE MENU: submenu không tràn ngang ── */
   @media (max-width: 767px) {
     .thom-menu-submenu-inner {
@@ -6110,7 +6295,7 @@
     <li>
       <a href="#" id="nav-products" onclick="showSection('products');setProductLine('tat-ca');setActiveNav('nav-products')">Sản Phẩm ▾</a>
       <div class="nav-dropdown">
-        <a id="nav-customize" href="#" onclick="openScentQuiz()">Mood Quiz</a>
+        <a href="#" onclick="openScentQuiz()">Mood Quiz</a>
         <div class="nav-dropdown-divider"></div>
         <a onclick="showSection('products');setProductLine('tat-ca');setActiveNav('nav-products')">Tất Cả</a>
         <a onclick="showSection('products');setProductLine('nen-thom');setActiveNav('nav-products')">Nến Thơm</a>
@@ -6124,6 +6309,9 @@
           </div>
         </div>
       </div>
+    </li>
+    <li>
+      <a href="#" id="nav-customize" onclick="showSection('customize');setActiveNav('nav-customize')">Customize</a>
     </li>
     <li>
       <a href="#" id="nav-mix" onclick="showSection('mix');setActiveNav('nav-mix')">Mix Combo</a>
@@ -6203,29 +6391,36 @@
         </div>
       </div>
       <div class="thom-menu-item-wrap">
-        <button class="thom-menu-link" type="button" onclick="navigateThomMenu('mix', 'nav-mix')">
+        <button class="thom-menu-link" type="button" onclick="navigateThomMenu('customize', 'nav-customize')">
           <span class="thom-menu-number">03</span>
+          <span class="thom-menu-title">Customize</span>
+          <span></span>
+        </button>
+      </div>
+      <div class="thom-menu-item-wrap">
+        <button class="thom-menu-link" type="button" onclick="navigateThomMenu('mix', 'nav-mix')">
+          <span class="thom-menu-number">04</span>
           <span class="thom-menu-title">Mix Combo</span>
           <span></span>
         </button>
       </div>
       <div class="thom-menu-item-wrap">
         <button class="thom-menu-link" type="button" onclick="navigateThomMenu('reviews', 'nav-reviews')">
-          <span class="thom-menu-number">04</span>
+          <span class="thom-menu-number">05</span>
           <span class="thom-menu-title">Tin tức</span>
           <span></span>
         </button>
       </div>
       <div class="thom-menu-item-wrap">
         <button class="thom-menu-link" type="button" onclick="navigateThomMenu('workshop', 'nav-workshop')">
-          <span class="thom-menu-number">05</span>
+          <span class="thom-menu-number">06</span>
           <span class="thom-menu-title">Workshop</span>
           <span></span>
         </button>
       </div>
       <div class="thom-menu-item-wrap">
         <button class="thom-menu-link" type="button" onclick="navigateThomMenu('ve-thom', 'nav-about')">
-          <span class="thom-menu-number">06</span>
+          <span class="thom-menu-number">07</span>
           <span class="thom-menu-title">Về Thơm.</span>
           <span></span>
         </button>
@@ -6697,13 +6892,13 @@
     </a>
     <a class="thom-ticker-item" href="#" onclick="showSection('workshop');setActiveNav('nav-workshop');return false;">
       <span class="thom-ticker-icon">✦</span>
-      <span class="thom-ticker-label">Workshop làm nến</span>
+      <span class="thom-ticker-label">Workshop làm nến thơm</span>
     </a>
     <a class="thom-ticker-item" href="#" onclick="showSection('products');setProductLine('hoi-scent');setActiveNav('nav-products');return false;">
       <span class="thom-ticker-icon">✦</span>
       <span class="thom-ticker-label">Bộ sưu tập mới — Hồi Scent</span>
     </a>
-    <a class="thom-ticker-item" href="#" onclick="showSection('quiz');setActiveNav('nav-quiz');return false;">
+    <a class="thom-ticker-item" href="#" onclick="showSection('products');setActiveNav('nav-products');openScentQuiz();return false;">
       <span class="thom-ticker-icon">✦</span>
       <span class="thom-ticker-label">Mood Quiz · Hương &amp; Cảm xúc</span>
     </a>
@@ -6714,13 +6909,13 @@
     </a>
     <a class="thom-ticker-item" href="#" onclick="showSection('workshop');setActiveNav('nav-workshop');return false;">
       <span class="thom-ticker-icon">✦</span>
-      <span class="thom-ticker-label">Workshop làm nến</span>
+      <span class="thom-ticker-label">Workshop làm nến thơm</span>
     </a>
     <a class="thom-ticker-item" href="#" onclick="showSection('products');setProductLine('hoi-scent');setActiveNav('nav-products');return false;">
       <span class="thom-ticker-icon">✦</span>
       <span class="thom-ticker-label">Bộ sưu tập mới — Hồi Scent</span>
     </a>
-    <a class="thom-ticker-item" href="#" onclick="showSection('quiz');setActiveNav('nav-quiz');return false;">
+    <a class="thom-ticker-item" href="#" onclick="showSection('products');setActiveNav('nav-products');openScentQuiz();return false;">
       <span class="thom-ticker-icon">✦</span>
       <span class="thom-ticker-label">Mood Quiz · Hương &amp; Cảm xúc</span>
     </a>
@@ -6738,7 +6933,7 @@
       <p class="hero-v2-desc">Mùi hương lấp đầy không gian sống vật lý, từ đó giúp xoa dịu và làm 'an' lại nhịp sống vội vã, xô bồ của người trẻ trong môi trường đô thị.</p>
       <div class="hero-v2-ctas">
         <button class="btn-dark" onclick="showSection('products');setProductLine('tat-ca');setActiveNav('nav-products')">Khám Phá Ngay</button>
-        <button class="btn-ghost">Mùi hương dành riêng cho bạn</button>
+        <button class="btn-ghost">Nến thơm của bạn</button>
       </div>
     </div>
     <div class="hero-v2-right">
@@ -8279,7 +8474,7 @@ function openScentQuiz() {
 window.addEventListener('load', function() {
   // Hero button
   document.querySelectorAll('.btn-ghost, .thom-menu-link').forEach(function(btn) {
-    if (btn.textContent && btn.textContent.trim().includes('Mùi hương dành riêng cho bạn')) {
+    if (btn.textContent && btn.textContent.trim().includes('Nến thơm của bạn')) {
       btn.addEventListener('click', function(e) {
         e.preventDefault();
         openScentQuiz();
@@ -8321,7 +8516,7 @@ window.addEventListener('load', function() {
       </div>
     </div>
     <div class="customize-form">
-      <h2>Mùi hương dành riêng cho bạn</h2>
+      <h2>Nến thơm của bạn</h2>
       <p class="subtitle">Tạo ra ngọn nến hoàn toàn theo ý muốn của bạn</p>
 
       <div class="form-step">
@@ -9849,9 +10044,8 @@ function renderProducts() {
     else if(priceF === 'over400') items = items.filter(p => p.price > 400000);
   }
 
-  // ── SMART SORT: tìm kiếm gần nhất / khách mới ─────────────────────────────
+  // ── SMART SORT: cá nhân hoá theo lịch sử KH + tìm kiếm ─────────────────────
   if (sortF === 'default') {
-    // Lay tu khoa tim kiem gan nhat
     var lastSearch = '';
     var isNewVisitor = false;
     try {
@@ -9863,38 +10057,79 @@ function renderProducts() {
       }
     } catch(e) {}
 
+    // Lấy dữ liệu interest của KH
+    const interests = thomGetInterests();
+    const hasInterests = Object.keys(interests.clicks || {}).length > 0
+                      || Object.keys(interests.cats   || {}).length > 0;
+
     if (lastSearch) {
-      // Co lich su tim kiem: sp khop len dau, roi sp moi, roi con lai
+      // Có lịch sử tìm kiếm: sp khớp lên đầu, rồi theo interest, rồi sp mới
       const q = lastSearch.toLowerCase();
       items.sort((a, b) => {
         const aMatch = (a.name.toLowerCase().includes(q) || a.scent.toLowerCase().includes(q) || (a.meta && a.meta.toLowerCase().includes(q))) ? 0 : 1;
         const bMatch = (b.name.toLowerCase().includes(q) || b.scent.toLowerCase().includes(q) || (b.meta && b.meta.toLowerCase().includes(q))) ? 0 : 1;
         if (aMatch !== bMatch) return aMatch - bMatch;
-        // Cung nhom: sp moi truoc
         return (a.badge === 'new' ? 0 : 1) - (b.badge === 'new' ? 0 : 1);
       });
-    } else if (isNewVisitor) {
-      // Khach moi: sp moi len dau
-      items.sort((a, b) => (a.badge === 'new' ? 0 : 1) - (b.badge === 'new' ? 0 : 1));
+    } else if (hasInterests) {
+      // KH có lịch sử xem/click → sắp xếp theo điểm cá nhân hoá + bán chạy
+      items.sort((a, b) => {
+        const lineA = (products['nen-thom']  || []).find(x=>String(x.id)===String(a.id)) ? 'nen-thom'
+                    : (products['tinh-dau'] || []).find(x=>String(x.id)===String(a.id)) ? 'tinh-dau'
+                    : (products['xit-phong']|| []).find(x=>String(x.id)===String(a.id)) ? 'xit-phong'
+                    : (products['hoi-scent']|| []).find(x=>String(x.id)===String(a.id)) ? 'hoi-scent' : a._line || '';
+        const lineB = (products['nen-thom']  || []).find(x=>String(x.id)===String(b.id)) ? 'nen-thom'
+                    : (products['tinh-dau'] || []).find(x=>String(x.id)===String(b.id)) ? 'tinh-dau'
+                    : (products['xit-phong']|| []).find(x=>String(x.id)===String(b.id)) ? 'xit-phong'
+                    : (products['hoi-scent']|| []).find(x=>String(x.id)===String(b.id)) ? 'hoi-scent' : b._line || '';
+        const interestA = thomScoreProduct(a, interests, lineA);
+        const interestB = thomScoreProduct(b, interests, lineB);
+        // Kết hợp: interest cá nhân (70%) + bán chạy toàn shop (30%)
+        const salesA = thomGetSaleCount(a.id);
+        const salesB = thomGetSaleCount(b.id);
+        const maxSales = Math.max(...items.map(i => thomGetSaleCount(i.id)), 1);
+        const scoreA = interestA * 0.7 + (salesA / maxSales) * 10 * 0.3;
+        const scoreB = interestB * 0.7 + (salesB / maxSales) * 10 * 0.3;
+        if (scoreB !== scoreA) return scoreB - scoreA;
+        return (a.badge === 'new' ? 0 : 1) - (b.badge === 'new' ? 0 : 1);
+      });
     } else {
-      // Khach cu, chua tim kiem: giu thu tu mac dinh (Hoi Scent len dau neu la tat-ca)
-      if (currentLine === 'tat-ca') {
+      // Khách chưa có interest → sort theo bán chạy toàn shop
+      const hasSalesData = items.some(i => thomGetSaleCount(i.id) > 0);
+      if (hasSalesData) {
         items.sort((a, b) => {
-          const aHoi = a._line === 'hoi-scent' ? 0 : 1;
-          const bHoi = b._line === 'hoi-scent' ? 0 : 1;
-          if (aHoi !== bHoi) return aHoi - bHoi;
+          const diff = thomGetSaleCount(b.id) - thomGetSaleCount(a.id);
+          if (diff !== 0) return diff;
           return (a.badge === 'new' ? 0 : 1) - (b.badge === 'new' ? 0 : 1);
         });
+      } else if (isNewVisitor) {
+        // Khách mới, chưa có data bán hàng: sp mới lên đầu
+        items.sort((a, b) => (a.badge === 'new' ? 0 : 1) - (b.badge === 'new' ? 0 : 1));
+      } else {
+        // Khách cũ, chưa có interest hay sales: Hồi Scent lên đầu nếu xem tất cả
+        if (currentLine === 'tat-ca') {
+          items.sort((a, b) => {
+            const aHoi = a._line === 'hoi-scent' ? 0 : 1;
+            const bHoi = b._line === 'hoi-scent' ? 0 : 1;
+            if (aHoi !== bHoi) return aHoi - bHoi;
+            return (a.badge === 'new' ? 0 : 1) - (b.badge === 'new' ? 0 : 1);
+          });
+        }
       }
     }
   } else {
-    // ── SORT thu cong do user chon ────────────────────────────────────────────
+    // ── SORT thủ công do user chọn ───────────────────────────────────────────
     if (sortF === 'name-asc')       items.sort((a, b) => a.name.localeCompare(b.name, 'vi'));
     else if (sortF === 'name-desc') items.sort((a, b) => b.name.localeCompare(a.name, 'vi'));
     else if (sortF === 'price-asc') items.sort((a, b) => a.price - b.price);
     else if (sortF === 'price-desc')items.sort((a, b) => b.price - a.price);
     else if (sortF === 'rating')    items.sort((a, b) => (b.rating||0) - (a.rating||0) || (b.reviews||0) - (a.reviews||0));
-    else if (sortF === 'popular')   items.sort((a, b) => (b.reviews||0) - (a.reviews||0));
+    else if (sortF === 'popular')   items.sort((a, b) => {
+      // Dùng lượt mua thật, fallback về reviews nếu chưa có data
+      const salesDiff = thomGetSaleCount(b.id) - thomGetSaleCount(a.id);
+      if (salesDiff !== 0) return salesDiff;
+      return (b.reviews||0) - (a.reviews||0);
+    });
     else if (sortF === 'newest')    items.sort((a, b) => (a.badge==='new'?0:1) - (b.badge==='new'?0:1));
   }
 
@@ -10112,6 +10347,21 @@ function addCustomToCart() {
     emoji: '✨',
     price: total
   });
+
+  // Lưu đơn customize lên Google Sheets
+  saveToSheet({
+    type:    'customize',
+    name:    name,
+    phone:   '',
+    email:   '',
+    size:    sizeLabel,
+    scents:  selectedScents.join(' + '),
+    color:   selectedWaxColor,
+    label:   (labelChecked && labelText) ? labelText : '',
+    message: '',
+    total:   total
+  });
+
   resetCustomizeForm();
 }
 
@@ -10766,6 +11016,9 @@ const productShortDesc = {
 };
 
 function openProductDetail(productId) {
+  // Ghi nhận KH quan tâm sản phẩm này
+  thomTrackClick(productId);
+
   if (!window._productMap) window._productMap = {};
   const allProducts = [...(products['nen-thom']||[]), ...(products['tinh-dau']||[]), ...(products['xit-phong']||[]), ...(products['hoi-scent']||[])];
   allProducts.forEach(x => { window._productMap[x.id] = x; });
@@ -11612,6 +11865,17 @@ async function submitWsForm() {
       templateParams
     );
 
+    // Lưu lên Google Sheets
+    saveToSheet({
+      type:    'workshop',
+      name:    customerName,
+      phone:   customerPhone,
+      email:   customerEmail,
+      session: workshopSchedule,
+      guests:  participantQuantity,
+      note:    customerNote
+    });
+
     document.getElementById('wsForm').style.display = 'none';
     document.getElementById('wsSuccess').classList.add('show');
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -11626,6 +11890,176 @@ async function submitWsForm() {
       submitBtn.style.opacity = '';
       submitBtn.style.cursor = '';
     }
+  }
+}
+
+// ══════════════════════════════════════════════
+//  PERSONALIZATION — Ghi nhớ sở thích KH
+//  Lưu vào localStorage theo userId (đăng nhập)
+//  hoặc anonymousId (khách chưa đăng nhập)
+// ══════════════════════════════════════════════
+
+const THOM_INTEREST_KEY = 'thom_interests';
+const THOM_ANON_KEY     = 'thom_anon_id';
+const MAX_INTEREST_ITEMS = 50; // giới hạn lịch sử
+
+// Lấy ID định danh (user đã đăng nhập hoặc anonymous)
+function thomGetUserId() {
+  try {
+    // Nếu đã đăng nhập, dùng email/uid
+    if (window.currentUser && window.currentUser.uid) return 'u_' + window.currentUser.uid;
+    if (window.taCurrentUser && window.taCurrentUser.email) return 'u_' + window.taCurrentUser.email;
+    // Chưa đăng nhập: tạo/lấy anonymous ID
+    let anon = localStorage.getItem(THOM_ANON_KEY);
+    if (!anon) {
+      anon = 'anon_' + Date.now() + '_' + Math.random().toString(36).slice(2, 7);
+      localStorage.setItem(THOM_ANON_KEY, anon);
+    }
+    return anon;
+  } catch(e) { return 'anon_default'; }
+}
+
+// Đọc dữ liệu interest của user hiện tại
+function thomGetInterests() {
+  try {
+    const uid = thomGetUserId();
+    const raw = localStorage.getItem(THOM_INTEREST_KEY + '_' + uid);
+    return raw ? JSON.parse(raw) : { clicks: {}, cats: {}, lines: {}, lastSeen: [] };
+  } catch(e) {
+    return { clicks: {}, cats: {}, lines: {}, lastSeen: [] };
+  }
+}
+
+// Ghi dữ liệu interest
+function thomSaveInterests(data) {
+  try {
+    const uid = thomGetUserId();
+    localStorage.setItem(THOM_INTEREST_KEY + '_' + uid, JSON.stringify(data));
+  } catch(e) {}
+}
+
+// Ghi nhận KH click vào sản phẩm
+function thomTrackClick(productId) {
+  try {
+    const allProducts = [
+      ...(products['nen-thom']  || []),
+      ...(products['tinh-dau'] || []),
+      ...(products['xit-phong']|| []),
+      ...(products['hoi-scent']|| [])
+    ];
+    const p = allProducts.find(x => String(x.id) === String(productId));
+    if (!p) return;
+
+    const data = thomGetInterests();
+
+    // Tăng click count cho sản phẩm
+    data.clicks[productId] = (data.clicks[productId] || 0) + 1;
+
+    // Tăng điểm cho category (mùi hương)
+    if (p.category) {
+      data.cats[p.category] = (data.cats[p.category] || 0) + 1;
+    }
+
+    // Tăng điểm cho dòng sản phẩm
+    const line = (products['nen-thom']  || []).find(x=>String(x.id)===String(productId)) ? 'nen-thom'
+               : (products['tinh-dau'] || []).find(x=>String(x.id)===String(productId)) ? 'tinh-dau'
+               : (products['xit-phong']|| []).find(x=>String(x.id)===String(productId)) ? 'xit-phong'
+               : (products['hoi-scent']|| []).find(x=>String(x.id)===String(productId)) ? 'hoi-scent' : '';
+    if (line) data.lines[line] = (data.lines[line] || 0) + 1;
+
+    // Ghi nhớ sản phẩm đã xem gần nhất (không trùng)
+    data.lastSeen = data.lastSeen || [];
+    data.lastSeen = data.lastSeen.filter(id => String(id) !== String(productId));
+    data.lastSeen.unshift(productId);
+    if (data.lastSeen.length > MAX_INTEREST_ITEMS) data.lastSeen = data.lastSeen.slice(0, MAX_INTEREST_ITEMS);
+
+    thomSaveInterests(data);
+  } catch(e) {}
+}
+
+// Tính điểm "mức độ quan tâm" của 1 sản phẩm dựa trên lịch sử KH
+function thomScoreProduct(p, data, lineOfProduct) {
+  let score = 0;
+
+  // Click trực tiếp vào sản phẩm này (trọng số cao nhất)
+  score += (data.clicks[p.id] || 0) * 10;
+
+  // Quan tâm đến category/mùi hương tương tự
+  if (p.category && data.cats[p.category]) {
+    score += data.cats[p.category] * 3;
+  }
+
+  // Cùng dòng sản phẩm (nen-thom, tinh-dau...)
+  if (lineOfProduct && data.lines[lineOfProduct]) {
+    score += data.lines[lineOfProduct] * 2;
+  }
+
+  // Đã xem gần đây — vị trí càng đầu điểm càng cao
+  const recentIdx = (data.lastSeen || []).findIndex(id => String(id) === String(p.id));
+  if (recentIdx !== -1) {
+    score += Math.max(0, 5 - recentIdx); // top 5 gần nhất
+  }
+
+  return score;
+}
+
+// ══════════════════════════════════════════════
+//  SALES TRACKING — Đếm lượt mua toàn cửa hàng
+//  Lưu global (không theo user) để sort bán chạy
+// ══════════════════════════════════════════════
+
+const THOM_SALES_KEY = 'thom_sales_count';
+
+// Đọc bảng đếm lượt mua
+function thomGetSales() {
+  try {
+    return JSON.parse(localStorage.getItem(THOM_SALES_KEY) || '{}');
+  } catch(e) { return {}; }
+}
+
+// Ghi nhận lượt mua cho từng sản phẩm trong đơn
+function thomTrackPurchase(cartItems) {
+  try {
+    const sales = thomGetSales();
+    (cartItems || []).forEach(function(item) {
+      const id = String(item.id);
+      sales[id] = (sales[id] || 0) + (item.qty || 1);
+
+      // Nếu là Mix Combo — đếm từng sản phẩm bên trong
+      if (item.mixItems && Array.isArray(item.mixItems)) {
+        item.mixItems.forEach(function(mi) {
+          const mid = String(mi.id);
+          sales[mid] = (sales[mid] || 0) + 1;
+        });
+      }
+    });
+    localStorage.setItem(THOM_SALES_KEY, JSON.stringify(sales));
+  } catch(e) {}
+}
+
+// Lấy tổng lượt mua của 1 sản phẩm
+function thomGetSaleCount(productId) {
+  try {
+    const sales = thomGetSales();
+    return sales[String(productId)] || 0;
+  } catch(e) { return 0; }
+}
+
+// ══════════════════════════════════════════════
+//  GOOGLE SHEETS INTEGRATION — Thơm.
+// ══════════════════════════════════════════════
+const THOM_SHEET_URL = "https://script.google.com/macros/s/AKfycbyacjAjEQXv-dm8RppULZnnACgLu-Rhjq2jYP5gGxDLaKYgHTcMlD2Xb06IKl-BSqfR/exec";
+
+async function saveToSheet(payload) {
+  try {
+    await fetch(THOM_SHEET_URL, {
+      method: "POST",
+      mode: "no-cors",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload)
+    });
+  } catch (err) {
+    console.warn("[Thơm. Sheet] Không lưu được dữ liệu:", err);
   }
 }
 
@@ -12148,6 +12582,27 @@ async function ckPlaceOrder() {
       qty:      item.qty,
       price:    item.price
     }))
+  });
+
+  // Ghi nhận lượt mua cho từng sản phẩm (bán chạy toàn cửa hàng)
+  thomTrackPurchase(cart);
+
+  // Lưu lên Google Sheets
+  const hasMix = cart.some(i => i.id.toString().startsWith('mix_combo'));
+  const sheetType = hasMix ? 'mixcombo' : 'order';
+  saveToSheet({
+    type:     sheetType,
+    name:     name,
+    phone:    phone,
+    email:    email,
+    address:  addrFull,
+    province: cityLabels[city] || city,
+    items:    cart.map(i => ({ name: i.name, qty: i.qty, price: i.price * i.qty })),
+    total:    total,
+    shipping: shipFee,
+    coupon:   couponLabel || '',
+    payment:  payLabels[ckPayment],
+    note:     note
   });
   // Reset toàn bộ trạng thái giỏ hàng, coupon, shipping sau khi đặt hàng thành công
   resetAfterOrder();
@@ -12912,7 +13367,7 @@ function ckViewOrder() {
 
       <!-- Social login -->
       <div class="ta-social-wrap">
-        <p class="ta-social-cta">Vào ngay trong <strong>10 giây</strong> — không cần mật khẩu</p>
+        <p class="ta-social-cta">Đăng nhập nhanh với:</p>
         <button class="ta-social-btn ta-social-google" onclick="taDoSocialLogin('Google')">
           <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
           Tiếp tục với Google
