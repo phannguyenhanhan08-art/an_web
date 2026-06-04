@@ -1845,12 +1845,14 @@
     font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase;
     color: var(--text-light); min-width: 120px;
   }
-  .cp-coupon-input-wrap { display: flex; gap: 0; }
+  .cp-coupon-input-wrap { display: flex; gap: 0; width: 100%; }
   .cp-coupon-input {
+    flex: 1 1 auto; min-width: 0;
     padding: 8px 14px; border: 1px solid var(--sand); border-right: none;
     font-size: 13px; font-family: 'Playfair Display', Georgia, serif;
     background: var(--warm-white); color: var(--text-dark);
-    outline: none; width: 180px;
+    outline: none;
+    text-transform: uppercase; letter-spacing: 2px;
   }
   .cp-coupon-input:focus { border-color: var(--taupe); }
   .cp-coupon-msg { font-size: 12px; width: 100%; padding-left: 132px; }
@@ -1980,7 +1982,26 @@
 
   @media (max-width: 900px) {
     .cart-page-body { grid-template-columns: 1fr; padding: 20px; }
-    .cart-page-header { padding: 20px; }
+    .cart-page-header {
+      padding: 20px;
+    }
+    .cart-page-header-inner {
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+    .cart-back-btn {
+      position: static !important;
+      align-self: center;
+      text-align: center;
+    }
+    .cart-page-header-center {
+      text-align: center;
+      width: 100%;
+    }
+    .cart-page-sub {
+      text-align: center;
+    }
     .cp-table-header { display: none; }
     .cp-row { grid-template-columns: 1fr; gap: 8px; }
     .cp-unit-price::before { content: none; }
@@ -4236,18 +4257,31 @@
     }
 
     .cart-page-header-inner {
-      align-items: flex-start;
       flex-direction: column;
-      gap: 12px;
+      align-items: center;
+      gap: 6px;
+      position: relative;
     }
 
     .cart-back-btn {
       position: static !important;
-      margin-bottom: 0;
+      margin-bottom: 4px;
+      align-self: center;
+      text-align: center;
+    }
+
+    .cart-page-header-center {
+      text-align: center;
+      width: 100%;
     }
 
     .cart-page-title {
       font-size: 32px !important;
+      text-align: center;
+    }
+
+    .cart-page-sub {
+      text-align: center;
     }
 
     .cart-page-body {
@@ -4343,11 +4377,14 @@
     .btn-dark,
     .btn-ghost,
     .cp-checkout-btn,
-    .ck-next-btn,
     .ws-submit-btn,
     .ws-register-btn {
       width: 100%;
       max-width: 100%;
+    }
+    /* ck-next-btn trong checkout panel 2: chiều rộng do flex container quyết định */
+    #ckPanel2 .ck-next-btn {
+      width: auto;
     }
 
     .hero-v2-left,
@@ -5387,15 +5424,30 @@
       padding-top: 100px; /* nav 60px + ticker 40px */
     }
     .cart-page-header {
-      padding: 20px 16px 16px !important;
+      padding: 20px 16px 18px !important;
     }
     .cart-page-header-inner {
       flex-direction: column;
-      align-items: flex-start;
-      gap: 8px;
+      align-items: center;
+      gap: 4px;
+      text-align: center;
+    }
+    .cart-back-btn {
+      position: static !important;
+      align-self: center;
+      text-align: center;
+      margin-bottom: 2px;
+    }
+    .cart-page-header-center {
+      text-align: center;
+      width: 100%;
     }
     .cart-page-title {
       font-size: 28px !important;
+      text-align: center;
+    }
+    .cart-page-sub {
+      text-align: center !important;
     }
     .cart-page-body {
       grid-template-columns: 1fr !important;
@@ -5492,12 +5544,14 @@
       padding: 16px !important;
     }
     .cp-coupon-input-wrap {
+      display: flex;
       width: 100%;
     }
     .cp-coupon-input {
-      flex: 1;
-      width: auto;
+      flex: 1 1 auto;
       min-width: 0;
+      width: 0;
+      font-size: 16px !important;
     }
     .cp-coupon-msg {
       padding-left: 0 !important;
@@ -5571,9 +5625,16 @@
       flex-wrap: wrap;
       gap: 8px;
     }
-    .ck-next-btn,
+    .ck-next-btn {
+      flex: 1 1 auto;
+      width: auto;
+      white-space: nowrap;
+      min-width: 0;
+    }
     .ck-back-btn {
-      width: 100%;
+      flex: 0 0 auto;
+      width: auto;
+      white-space: nowrap;
     }
     .ck-success-title {
       font-size: 26px !important;
@@ -6285,7 +6346,11 @@
   .ot-success-code-value {
     font-size: 26px; font-weight: 700; color: var(--deep-brown);
     letter-spacing: 2px; font-family: 'Playfair Display', Georgia, serif;
-    display: block; text-align: center;
+    display: block; text-align: center; word-break: break-all;
+  }
+  @media (max-width: 480px) {
+    .ot-success-code-value { font-size: 20px; letter-spacing: 1px; }
+    .ot-success-code-box { padding: 14px 16px; }
   }
   .ot-success-code-hint {
     font-size: 11px; color: var(--text-light); margin-top: 6px; line-height: 1.5;
@@ -6880,8 +6945,8 @@
         <div class="cp-coupon-row">
           <span class="cp-coupon-label">Mã Giảm Giá</span>
           <div class="cp-coupon-input-wrap">
-            <input type="text" class="cp-coupon-input" placeholder="Nhập mã..." id="cpCouponInput">
-            <button class="btn-outline" style="padding:8px 20px;font-size:11px" onclick="applyCoupon()">Áp Dụng</button>
+            <input type="text" class="cp-coupon-input" placeholder="Nhập mã..." id="cpCouponInput" maxlength="7">
+            <button class="btn-outline" style="flex:0 0 96px;padding:8px 0;font-size:11px;white-space:nowrap;text-align:center" onclick="applyCoupon()">Áp Dụng</button>
           </div>
           <div class="cp-coupon-msg" id="cpCouponMsg"></div>
         </div>
@@ -7018,7 +7083,7 @@
       <p class="hero-v2-desc">Mùi hương lấp đầy không gian sống vật lý, từ đó giúp xoa dịu và làm 'an' lại nhịp sống vội vã, xô bồ của người trẻ trong môi trường đô thị.</p>
       <div class="hero-v2-ctas">
         <button class="btn-dark" onclick="showSection('products');setProductLine('tat-ca');setActiveNav('nav-products')">Khám Phá Ngay</button>
-        <button class="btn-ghost">Nến thơm của bạn</button>
+        <button class="btn-ghost">Khám phá cá tính hương thơm</button>
       </div>
     </div>
     <div class="hero-v2-right">
@@ -7461,7 +7526,7 @@
           </div>
         </div>
 
-        <div style="display:flex;gap:12px;margin-top:8px;align-items:stretch">
+        <div style="display:flex;flex-wrap:nowrap;gap:12px;margin-top:8px;align-items:stretch">
           <button class="ck-back-btn" onclick="ckGoBack(1)">← Quay Lại</button>
           <button class="ck-next-btn" style="flex:1" onclick="ckPlaceOrder()">Đặt Hàng Ngay →</button>
         </div>
@@ -9158,7 +9223,7 @@ function openScentQuiz() {
 window.addEventListener('load', function() {
   // Hero button
   document.querySelectorAll('.btn-ghost, .thom-menu-link').forEach(function(btn) {
-    if (btn.textContent && btn.textContent.trim().includes('Nến thơm của bạn')) {
+    if (btn.textContent && btn.textContent.trim().includes('Khám phá cá tính hương thơm')) {
       btn.addEventListener('click', function(e) {
         e.preventDefault();
         openScentQuiz();
@@ -12946,10 +13011,13 @@ function thomPad2(n) {
 // ── Mã đơn tăng dần bắt đầu từ 01000 ──
 function generateThomOrderId() {
   try {
-    var last = parseInt(localStorage.getItem('thom_order_seq') || '0', 10);
-    var next = Math.max(last + 1, 1000); // bắt đầu từ 01000
+    var stored = localStorage.getItem('thom_order_seq');
+    // Nếu chưa có trong localStorage, seed = 999 → đơn đầu tiên = 1000 = "01000"
+    var last = stored !== null ? parseInt(stored, 10) : 999;
+    var next = last + 1;
+    if (next < 1000) next = 1000; // đảm bảo không bao giờ dưới 01000
     localStorage.setItem('thom_order_seq', String(next));
-    return String(next).padStart(5, '0'); // "01000", "01001"...
+    return String(next).padStart(5, '0'); // "01000", "01001", "01002"...
   } catch(e) {
     return String(Date.now()).slice(-5);
   }
@@ -13374,10 +13442,14 @@ async function ckPlaceOrder() {
     return;
   }
 
-  // Cập nhật mã đơn ở success box (giữ nút copy bên trong)
+  // Cập nhật mã đơn ở success box — hiển thị "ĐƠN #01000" tăng dần
   var codeEl = document.getElementById('ckSuccessCode');
   if (codeEl) {
-    codeEl.textContent = ckOrderCode;
+    var childEls = Array.from(codeEl.children);
+    codeEl.textContent = '';
+    var textNode = document.createTextNode('ĐƠN #' + ckOrderCode);
+    codeEl.appendChild(textNode);
+    childEls.forEach(function(el) { codeEl.appendChild(el); });
   }
   document.getElementById('ckSuccessName').textContent = name;
   document.getElementById('ckSuccessAddress').textContent = addrFull;
@@ -13698,7 +13770,9 @@ function otCopySuccessCode() {
   if (codeEl) {
     for (var i = 0; i < codeEl.childNodes.length; i++) {
       if (codeEl.childNodes[i].nodeType === 3) {
-        code = codeEl.childNodes[i].textContent.trim();
+        // Lấy phần số sau "ĐƠN #" (nếu có), bỏ prefix để copy chỉ số mã đơn
+        var raw = codeEl.childNodes[i].textContent.trim();
+        code = raw.replace(/^ĐƠN\s*#\s*/i, '').trim();
         break;
       }
     }
@@ -14044,10 +14118,11 @@ function ckViewOrder() {
   var codeEl = document.getElementById('ckSuccessCode');
   var code = '';
   if (codeEl) {
-    // Lấy text node đầu tiên (trước nút copy)
+    // Lấy text node đầu tiên (trước nút copy), bỏ prefix "ĐƠN #"
     for (var i = 0; i < codeEl.childNodes.length; i++) {
       if (codeEl.childNodes[i].nodeType === 3) {
-        code = codeEl.childNodes[i].textContent.trim();
+        var raw = codeEl.childNodes[i].textContent.trim();
+        code = raw.replace(/^ĐƠN\s*#\s*/i, '').trim();
         break;
       }
     }
